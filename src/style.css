@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #010c20;
+}
+.container{
+    width: 12rem;
+    height: 12rem;
+    perspective: 50rem;
+    margin: 3rem;
+}
+.cube{
+    width: 10rem;
+    height: 10rem;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotate3d(1, 1, 0, 45deg);
+}
+.Cubeanime{
+    animation: cubeRotation 5s linear infinite ;
+    
+}
+@keyframes cubeRotation{
+    from{
+        transform: rotate3d(0, 0, 0, 0);
+    }
+    to{
+        transform: rotate3d(1,1,0,360deg);
+    }
+}
+
+.face{
+    width: 10rem;
+    height: 10rem;
+    border: 0.1rem solid black;
+    position: absolute;
+    opacity: 0.8;
+    border-radius: 1rem;
+    display: flex;
+    background-color: #680303;
+    box-shadow: inset 0px 0px 1rem 11px rgb(225 255 0);
+    justify-content: center;
+    align-items: center;
+}
+.Color1{
+    background-color: #eccdcd;
+    box-shadow: inset 0px 0px 0.7rem 19px rgb(14 7 0);
+} 
+.Color2{
+    background-color: #680303;
+    box-shadow: inset 0px 0px 1rem 11px rgb(225 255 0);
+} 
+.face h3{
+    border-radius: 50%;
+    background-color: firebrick;
+    color: #0defaf;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.front{
+    transform: translateZ(100px);
+}
+.back{
+    transform: rotate3d(1,1,0,180deg) translate3d(1px ,0px ,61px);
+}
+.right{
+    transform: rotateY(90deg) translate3d(-20px, 1px, 82px);
+} 
+.left{
+    transform: rotateY(-90deg) translate3d(19px ,1px ,81px);
+}
+.top{
+    transform: rotateX(90deg) translate3d(0px ,20px ,80px);
+} 
+.bottom{
+    transform: rotateX(-90deg) translate3d(0px,-20px, 82px) ;
+} 
+
+.controlsec{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.controlsec button{
+    margin: 1rem;
+    padding: 0.7rem;
+    border-radius: 3rem;
+    outline: none;
+    cursor: pointer;
+    color: darkgreen;
+    font: 400 1rem 'Lucida Sans', sans-serif;
+    background: #050505;
+}
+button:active{
+    transform: scale(0.95);
+}
+#startbtn, #stopbtn ,.colorbox{
+    box-shadow: 0px 0px 10px 0px rgb(0 126 255);
+}
+.colorbox{
+    margin-left: 0.95rem;
+    padding: 0.45rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0.01rem solid white;
+    border-radius: 3rem;
+    background: #5e2222;
+}
+.colorbox h3{
+    color: #8f90b7;
+    font-weight: 500;
+}
+#color1{
+    background-color: #eccdcd;
+    border: 0.5rem solid rgb(14 7 0);
+}
+#color2{
+    background-color: #680303;
+    border: 0.5rem solid rgb(225 255 0);
+}
